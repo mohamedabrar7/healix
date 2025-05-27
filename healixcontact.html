@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - PharmaHealth</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .custom-checkbox {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          user-select: none;
+      }
+      .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+      .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #fff;
+          border: 1px solid #d1d5db;
+          border-radius: 4px;
+      }
+      .custom-checkbox:hover input ~ .checkmark {
+          background-color: #f9fafb;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+          background-color: #4F46E5;
+          border-color: #4F46E5;
+      }
+      .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+      }
+      .custom-checkbox .checkmark:after {
+          left: 7px;
+          top: 3px;
+          width: 6px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+      .faq-item {
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          max-height: 56px;
+      }
+      .faq-item.active {
+          max-height: 300px;
+      }
+      .date-cell {
+          cursor: pointer;
+          transition: all 0.2s ease;
+      }
+      .date-cell:hover:not(.date-selected):not(.date-disabled) {
+          background-color: #f3f4f6;
+      }
+      .date-selected {
+          background-color: #4F46E5;
+          color: white;
+      }
+      .date-disabled {
+          color: #d1d5db;
+          cursor: not-allowed;
+      }
+      .time-slot {
+          cursor: pointer;
+          transition: all 0.2s ease;
+      }
+      .time-slot:hover:not(.time-selected):not(.time-disabled) {
+          background-color: #f3f4f6;
+      }
+      .time-selected {
+          background-color: #4F46E5;
+          color: white;
+      }
+      .time-disabled {
+          color: #d1d5db;
+          cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-['Pacifico'] text-primary">Healix</a>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-primary font-medium"
+            >Home</a
+          >
+          <a href="healixproduct.html" class="text-gray-600 hover:text-primary font-medium"
+            >Products</a
+          >
+          <a href="healixaboutus.html" class="text-gray-600 hover:text-primary font-medium"
+            >About Us</a
+          >
+          <a href="healixcontact.html" class="text-gray-600 hover:text-primary font-medium"
+            >Contact</a
+          >
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary"
+          >
+            <i class="ri-search-line ri-lg"></i>
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary"
+          >
+            <i class="ri-shopping-cart-line ri-lg"></i>
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary"
+          >
+            <i class="ri-user-line ri-lg"></i>
+          </button>
+          <button
+            class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-gray-200">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-500">
+          <a href="#" class="hover:text-primary">Home</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-700 font-medium">Contact</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative bg-cover bg-center h-[400px]"
+      style="background-image: url('https://readdy.ai/api/search-image?query=modern%20pharmacy%20interior%20with%20clean%20design%2C%20bright%20lighting%2C%20organized%20shelves%20with%20medications%2C%20professional%20environment%2C%20soft%20gradient%20on%20left%20side%20for%20text%20overlay%2C%20professional%20pharmaceutical%20setting&width=1920&height=800&seq=1&orientation=landscape');"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/40"
+      ></div>
+      <div class="container mx-auto px-4 h-full flex items-center">
+        <div class="relative w-full max-w-3xl text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+          <p class="text-xl mb-6">
+            We're here to help with all your healthcare needs
+          </p>
+          <div
+            class="bg-white/20 backdrop-blur-sm inline-block px-4 py-3 rounded-lg mb-6"
+          >
+            <span class="text-white font-medium">24/7 Emergency: </span>
+            <span class="text-white font-bold text-lg">1-800-555-7890</span>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="tel:+18005557890"
+              class="bg-primary text-white px-6 py-3 rounded-button font-medium flex items-center whitespace-nowrap"
+            >
+              <i class="ri-phone-line mr-2"></i> Call Now
+            </a>
+            <a
+              href="mailto:contact@pharmahealth.com"
+              class="bg-white text-primary px-6 py-3 rounded-button font-medium flex items-center whitespace-nowrap"
+            >
+              <i class="ri-mail-line mr-2"></i> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information Grid -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Direct Contact -->
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-6"
+            >
+              <i class="ri-customer-service-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Direct Contact</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Phone</p>
+                  <p class="text-gray-600">+1 (555) 123-4567</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-mail-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Email</p>
+                  <p class="text-gray-600">contact@pharmahealth.com</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-printer-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Fax</p>
+                  <p class="text-gray-600">+1 (555) 987-6543</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-6"
+            >
+              <i class="ri-time-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Business Hours</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Weekdays</p>
+                  <p class="text-gray-600">8:00 AM - 9:00 PM</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Saturday</p>
+                  <p class="text-gray-600">9:00 AM - 7:00 PM</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-calendar-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Sunday</p>
+                  <p class="text-gray-600">10:00 AM - 6:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Emergency Services -->
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-6"
+            >
+              <i class="ri-first-aid-kit-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Emergency Services</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-24-hours-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">24/7 Support</p>
+                  <p class="text-gray-600">Available all days</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-phone-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Emergency Line</p>
+                  <p class="text-gray-600">1-800-555-7890</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-home-heart-line"></i>
+                </div>
+                <div class="ml-3">
+                  <p class="text-gray-900 font-medium">Home Delivery</p>
+                  <p class="text-gray-600">For emergency medications</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Our Locations</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Find the nearest PharmaHealth location. We have multiple branches
+            across the city to serve you better.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div
+            class="w-full md:w-2/3 h-[400px] bg-white rounded-lg shadow-sm overflow-hidden"
+          >
+            <div
+              class="w-full h-full bg-cover bg-center"
+              style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"
+            ></div>
+          </div>
+
+          <div class="w-full md:w-1/3">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <h3 class="text-xl font-semibold mb-4">Our Branches</h3>
+
+              <div class="space-y-6">
+                <div class="border-b border-gray-100 pb-4">
+                  <h4 class="font-medium text-gray-900 mb-1">
+                    Downtown Branch
+                  </h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    123 Main Street, Suite 100<br />New York, NY 10001
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">+1 (555) 123-4567</span>
+                    <button
+                      class="text-primary text-sm font-medium flex items-center !rounded-button whitespace-nowrap"
+                    >
+                      <i class="ri-map-pin-line mr-1"></i> Get Directions
+                    </button>
+                  </div>
+                </div>
+
+                <div class="border-b border-gray-100 pb-4">
+                  <h4 class="font-medium text-gray-900 mb-1">Uptown Branch</h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    456 Park Avenue<br />New York, NY 10022
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">+1 (555) 234-5678</span>
+                    <button
+                      class="text-primary text-sm font-medium flex items-center !rounded-button whitespace-nowrap"
+                    >
+                      <i class="ri-map-pin-line mr-1"></i> Get Directions
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-medium text-gray-900 mb-1">
+                    Westside Branch
+                  </h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    789 Broadway<br />New York, NY 10003
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">+1 (555) 345-6789</span>
+                    <button
+                      class="text-primary text-sm font-medium flex items-center !rounded-button whitespace-nowrap"
+                    >
+                      <i class="ri-map-pin-line mr-1"></i> Get Directions
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-gray-600">
+              Have questions or feedback? We'd love to hear from you. Fill out
+              the form below and we'll get back to you as soon as possible.
+            </p>
+          </div>
+
+          <form class="bg-gray-50 rounded-lg shadow-sm p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label
+                  for="firstName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >First Name *</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  for="lastName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Last Name *</label
+                >
+                <input
+                  type="text"
+                  id="lastName"
+                  class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                />
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label
+                for="subject"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Subject *</label
+              >
+              <div class="relative">
+                <select
+                  id="subject"
+                  class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8"
+                  required
+                >
+                  <option value="">Please select</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="prescription">Prescription Refill</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="other">Other</option>
+                </select>
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+                >
+                  <i class="ri-arrow-down-s-line text-gray-400"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Message *</label
+              >
+              <textarea
+                id="message"
+                rows="5"
+                class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-6">
+              <label class="custom-checkbox">
+                <input type="checkbox" required />
+                <span class="checkmark"></span>
+                <span class="text-sm text-gray-700"
+                  >I agree to the
+                  <a href="#" class="text-primary hover:underline"
+                    >Privacy Policy</a
+                  >
+                  and consent to the processing of my personal data.</span
+                >
+              </label>
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Submit Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Booking -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Book a Consultation</h2>
+            <p class="text-gray-600">
+              Schedule a one-on-one consultation with our pharmacists for
+              personalized healthcare advice.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-lg font-semibold mb-4">Select a Date</h3>
+                <div class="mb-4">
+                  <div class="flex items-center justify-between mb-4">
+                    <button
+                      id="prevMonth"
+                      class="text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-arrow-left-s-line ri-lg"></i>
+                    </button>
+                    <h4 id="currentMonth" class="text-gray-900 font-medium">
+                      May 2025
+                    </h4>
+                    <button
+                      id="nextMonth"
+                      class="text-gray-600 hover:text-primary"
+                    >
+                      <i class="ri-arrow-right-s-line ri-lg"></i>
+                    </button>
+                  </div>
+
+                  <div class="grid grid-cols-7 gap-1 text-center">
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Sun
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Mon
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Tue
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Wed
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Thu
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Fri
+                    </div>
+                    <div class="text-xs font-medium text-gray-500 py-2">
+                      Sat
+                    </div>
+
+                    <div
+                      class="date-cell date-disabled rounded-sm py-2 text-sm"
+                    >
+                      27
+                    </div>
+                    <div
+                      class="date-cell date-disabled rounded-sm py-2 text-sm"
+                    >
+                      28
+                    </div>
+                    <div
+                      class="date-cell date-selected rounded-sm py-2 text-sm"
+                    >
+                      27
+                    </div>
+                    <div class="date-cell rounded-sm py-2 text-sm">28</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">29</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">30</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">31</div>
+
+                    <div class="date-cell rounded-sm py-2 text-sm">1</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">2</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">3</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">4</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">5</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">6</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">7</div>
+
+                    <div class="date-cell rounded-sm py-2 text-sm">8</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">9</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">10</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">11</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">12</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">13</div>
+                    <div class="date-cell rounded-sm py-2 text-sm">14</div>
+                  </div>
+                </div>
+
+                <h3 class="text-lg font-semibold mb-4">Select a Time</h3>
+                <div class="grid grid-cols-3 gap-2">
+                  <div
+                    class="time-slot time-disabled text-center py-2 rounded-md text-sm"
+                  >
+                    9:00 AM
+                  </div>
+                  <div
+                    class="time-slot time-disabled text-center py-2 rounded-md text-sm"
+                  >
+                    10:00 AM
+                  </div>
+                  <div
+                    class="time-slot time-selected text-center py-2 rounded-md text-sm"
+                  >
+                    11:00 AM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    12:00 PM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    1:00 PM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    2:00 PM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    3:00 PM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    4:00 PM
+                  </div>
+                  <div
+                    class="time-slot text-center py-2 rounded-md text-sm border border-gray-200"
+                  >
+                    5:00 PM
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-4">Consultation Details</h3>
+
+                <div class="space-y-4">
+                  <div>
+                    <label
+                      for="consultationType"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Consultation Type *</label
+                    >
+                    <div class="relative">
+                      <select
+                        id="consultationType"
+                        class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8"
+                        required
+                      >
+                        <option value="">Please select</option>
+                        <option value="medication">Medication Review</option>
+                        <option value="chronic">
+                          Chronic Disease Management
+                        </option>
+                        <option value="wellness">Wellness Consultation</option>
+                        <option value="nutrition">Nutrition Advice</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <div
+                        class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+                      >
+                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="consultationDetails"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Brief Description</label
+                    >
+                    <textarea
+                      id="consultationDetails"
+                      rows="4"
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      placeholder="Please provide any specific details or questions for your consultation"
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label
+                      for="consultationName"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="consultationName"
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="consultationEmail"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="consultationEmail"
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="consultationPhone"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Phone Number *</label
+                    >
+                    <input
+                      type="tel"
+                      id="consultationPhone"
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      required
+                    />
+                  </div>
+
+                  <div class="pt-4">
+                    <button
+                      type="button"
+                      class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+                    >
+                      Book Consultation
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p class="text-gray-600">
+              Find answers to common questions about our services and policies.
+            </p>
+          </div>
+
+          <div class="relative mb-8">
+            <input
+              type="text"
+              placeholder="Search for questions..."
+              class="w-full px-4 py-3 pl-10 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+            />
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden active"
+            >
+              <button
+                class="faq-toggle w-full flex items-center justify-between px-6 py-4 bg-gray-50 text-left focus:outline-none"
+              >
+                <span class="font-medium text-gray-900"
+                  >How do I transfer my prescription to your pharmacy?</span
+                >
+                <i
+                  class="ri-subtract-line text-primary transition-transform"
+                ></i>
+              </button>
+              <div class="faq-content px-6 py-4 bg-white">
+                <p class="text-gray-600">
+                  Transferring your prescription is easy. You can either bring
+                  your current prescription bottle to any of our locations, call
+                  us with your prescription information, or ask your doctor to
+                  send a new prescription directly to us. Our staff will handle
+                  the rest of the process for you.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex items-center justify-between px-6 py-4 bg-gray-50 text-left focus:outline-none"
+              >
+                <span class="font-medium text-gray-900"
+                  >Do you offer medication delivery services?</span
+                >
+                <i class="ri-add-line text-primary transition-transform"></i>
+              </button>
+              <div class="faq-content px-6 py-4 bg-white hidden">
+                <p class="text-gray-600">
+                  Yes, we offer free medication delivery within a 5-mile radius
+                  of any of our pharmacy locations. For locations outside this
+                  range, a small delivery fee may apply. Deliveries are
+                  typically made within 24 hours of prescription processing.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex items-center justify-between px-6 py-4 bg-gray-50 text-left focus:outline-none"
+              >
+                <span class="font-medium text-gray-900"
+                  >What insurance plans do you accept?</span
+                >
+                <i class="ri-add-line text-primary transition-transform"></i>
+              </button>
+              <div class="faq-content px-6 py-4 bg-white hidden">
+                <p class="text-gray-600">
+                  We accept most major insurance plans including Medicare,
+                  Medicaid, Blue Cross Blue Shield, Aetna, Cigna,
+                  UnitedHealthcare, and many others. If you're unsure whether we
+                  accept your insurance, please contact us with your insurance
+                  details, and we'll be happy to verify coverage for you.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex items-center justify-between px-6 py-4 bg-gray-50 text-left focus:outline-none"
+              >
+                <span class="font-medium text-gray-900"
+                  >How can I refill my prescription?</span
+                >
+                <i class="ri-add-line text-primary transition-transform"></i>
+              </button>
+              <div class="faq-content px-6 py-4 bg-white hidden">
+                <p class="text-gray-600">
+                  You can refill your prescription in several ways: through our
+                  mobile app, on our website, by calling our automated refill
+                  line, or by visiting any of our pharmacy locations in person.
+                  For regular medications, we also offer an auto-refill program
+                  that automatically processes your refills before you run out.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex items-center justify-between px-6 py-4 bg-gray-50 text-left focus:outline-none"
+              >
+                <span class="font-medium text-gray-900"
+                  >Do you offer vaccinations?</span
+                >
+                <i class="ri-add-line text-primary transition-transform"></i>
+              </button>
+              <div class="faq-content px-6 py-4 bg-white hidden">
+                <p class="text-gray-600">
+                  Yes, our pharmacists are certified to administer a variety of
+                  vaccines including flu, pneumonia, shingles, COVID-19, and
+                  travel vaccines. Most vaccinations are available on a walk-in
+                  basis, though we recommend calling ahead to ensure
+                  availability, especially for travel vaccines which may require
+                  special ordering.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <p class="text-gray-600 mb-4">
+              Can't find what you're looking for?
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-primary font-medium hover:underline"
+            >
+              <i class="ri-customer-service-2-line mr-2"></i> Contact our
+              support team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-4 inline-block"
+              >Healix</a
+            >
+            <p class="text-gray-400 mb-4">
+              Your trusted healthcare partner since 1995. We're committed to
+              providing exceptional pharmacy services and personalized care.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixaboutus.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixproduct.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Prescription Refills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Medication Counseling</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Vaccinations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Health Screenings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Compounding</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home Delivery</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for health tips and updates.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="flex-grow px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary px-4 py-2 rounded-r-md font-medium whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <h3 class="text-lg font-semibold mb-2">We Accept</h3>
+            <div class="flex space-x-3">
+              <div
+                class="w-10 h-6 flex items-center justify-center bg-gray-800 rounded"
+              >
+                <i class="ri-visa-fill text-white"></i>
+              </div>
+              <div
+                class="w-10 h-6 flex items-center justify-center bg-gray-800 rounded"
+              >
+                <i class="ri-mastercard-fill text-white"></i>
+              </div>
+              <div
+                class="w-10 h-6 flex items-center justify-center bg-gray-800 rounded"
+              >
+                <i class="ri-paypal-fill text-white"></i>
+              </div>
+              <div
+                class="w-10 h-6 flex items-center justify-center bg-gray-800 rounded"
+              >
+                <i class="ri-apple-fill text-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 PharmaHealth. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Privacy Policy</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Terms of Service</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white text-sm"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="faq-accordion">
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains("active");
+            const icon = this.querySelector("i");
+            const content = this.nextElementSibling;
+
+            // Close all FAQs
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.classList.remove("active");
+              const itemIcon = item.querySelector("i");
+              const itemContent = item.querySelector(".faq-content");
+
+              if (itemIcon) {
+                itemIcon.classList.remove("ri-subtract-line");
+                itemIcon.classList.add("ri-add-line");
+              }
+
+              if (itemContent) {
+                itemContent.classList.add("hidden");
+              }
+            });
+
+            // If the clicked FAQ wasn't active, open it
+            if (!isActive) {
+              faqItem.classList.add("active");
+              icon.classList.remove("ri-add-line");
+              icon.classList.add("ri-subtract-line");
+              content.classList.remove("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="calendar-interactions">
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateCells = document.querySelectorAll(".date-cell:not(.date-disabled)");
+        const timeSlots = document.querySelectorAll(".time-slot:not(.time-disabled)");
+
+        dateCells.forEach((cell) => {
+          cell.addEventListener("click", function () {
+            dateCells.forEach((c) => c.classList.remove("date-selected"));
+            this.classList.add("date-selected");
+          });
+        });
+
+        timeSlots.forEach((slot) => {
+          slot.addEventListener("click", function () {
+            if (!this.classList.contains("time-disabled")) {
+              timeSlots.forEach((s) => s.classList.remove("time-selected"));
+              this.classList.add("time-selected");
+            }
+          });
+        });
+
+        // Month navigation
+        const prevMonthBtn = document.getElementById("prevMonth");
+        const nextMonthBtn = document.getElementById("nextMonth");
+        const currentMonthEl = document.getElementById("currentMonth");
+
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        let currentDate = new Date(2025, 4); // May 2025
+
+        function updateCalendarHeader() {
+          currentMonthEl.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+        }
+
+        prevMonthBtn.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() - 1);
+          updateCalendarHeader();
+        });
+
+        nextMonthBtn.addEventListener("click", function () {
+          currentDate.setMonth(currentDate.getMonth() + 1);
+          updateCalendarHeader();
+        });
+      });
+    </script>
+  </body>
+</html>

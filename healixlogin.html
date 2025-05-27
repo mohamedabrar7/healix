@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - PharmaHealth</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#4F46E5", secondary: "#10B981" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 28px;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 1px solid #d1d5db;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #f9fafb;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #4F46E5;
+border-color: #4F46E5;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.faq-item {
+overflow: hidden;
+transition: max-height 0.3s ease;
+max-height: 56px;
+}
+.faq-item.active {
+max-height: 300px;
+}
+.date-cell {
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.date-cell:hover:not(.date-selected):not(.date-disabled) {
+background-color: #f3f4f6;
+}
+.date-selected {
+background-color: #4F46E5;
+color: white;
+}
+.date-disabled {
+color: #d1d5db;
+cursor: not-allowed;
+}
+.time-slot {
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.time-slot:hover:not(.time-selected):not(.time-disabled) {
+background-color: #f3f4f6;
+}
+.time-selected {
+background-color: #4F46E5;
+color: white;
+}
+.time-disabled {
+color: #d1d5db;
+cursor: not-allowed;
+}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<!-- Keep existing header code -->
+</header>
+<!-- Auth Section -->
+<section class="py-16 min-h-[calc(100vh-80px)]">
+<div class="container mx-auto px-4">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-8">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary inline-block mb-4">logo</a>
+<h1 class="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
+<p class="text-gray-600">Sign in to access your pharmacy account</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm p-8">
+<div class="flex border-b border-gray-200 mb-6">
+<button class="flex-1 text-center py-3 font-medium border-b-2 border-primary text-primary" data-tab="login">Sign In</button>
+<button class="flex-1 text-center py-3 font-medium text-gray-500 hover:text-gray-700" data-tab="register">Register</button>
+</div>
+<!-- Login Form -->
+<form id="loginForm" class="space-y-4">
+<div>
+<label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="loginEmail" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+</div>
+<div>
+<label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+<div class="relative">
+<input type="password" id="loginPassword" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-10" required>
+<button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" data-password-toggle>
+<i class="ri-eye-line"></i>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+<span class="text-sm text-gray-700">Remember me</span>
+</label>
+<a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Sign In</button>
+<div class="relative text-center my-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-200"></div>
+</div>
+<span class="relative inline-block px-4 bg-white text-sm text-gray-500">Or continue with</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-button hover:bg-gray-50">
+<i class="ri-google-fill text-[#EA4335] text-xl"></i>
+</button>
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-button hover:bg-gray-50">
+<i class="ri-apple-fill text-[#000000] text-xl"></i>
+</button>
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-button hover:bg-gray-50">
+<i class="ri-facebook-fill text-[#1877F2] text-xl"></i>
+</button>
+</div>
+</form>
+<!-- Register Form -->
+<form id="registerForm" class="hidden space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" id="firstName" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+</div>
+<div>
+<label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" id="lastName" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+</div>
+</div>
+<div>
+<label for="registerEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="registerEmail" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+</div>
+<div>
+<label for="registerPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+<div class="relative">
+<input type="password" id="registerPassword" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-10" required>
+<button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" data-password-toggle>
+<i class="ri-eye-line"></i>
+</button>
+</div>
+</div>
+<div>
+<label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+<div class="relative">
+<input type="password" id="confirmPassword" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-10" required>
+<button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" data-password-toggle>
+<i class="ri-eye-line"></i>
+</button>
+</div>
+</div>
+<div>
+<label class="custom-checkbox">
+<input type="checkbox" required>
+<span class="checkmark"></span>
+<span class="text-sm text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Create Account</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<script id="faq-accordion">
+document.addEventListener("DOMContentLoaded", function () {
+  const faqToggles = document.querySelectorAll(".faq-toggle");
+  faqToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      const faqItem = this.parentElement;
+      const isActive = faqItem.classList.contains("active");
+      const icon = this.querySelector("i");
+      const content = this.nextElementSibling;
+      // Close all FAQs
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.classList.remove("active");
+        const itemIcon = item.querySelector("i");
+        const itemContent = item.querySelector(".faq-content");
+        if (itemIcon) {
+          itemIcon.classList.remove("ri-subtract-line");
+          itemIcon.classList.add("ri-add-line");
+        }
+        if (itemContent) {
+          itemContent.classList.add("hidden");
+        }
+      });
+      // If the clicked FAQ wasn't active, open it
+      if (!isActive) {
+        faqItem.classList.add("active");
+        icon.classList.remove("ri-add-line");
+        icon.classList.add("ri-subtract-line");
+        content.classList.remove("hidden");
+      }
+    });
+  });
+});
+</script>
+<script id="calendar-interactions">
+document.addEventListener("DOMContentLoaded", function () {
+  const dateCells = document.querySelectorAll(".date-cell:not(.date-disabled)");
+  const timeSlots = document.querySelectorAll(".time-slot:not(.time-disabled)");
+  dateCells.forEach((cell) => {
+    cell.addEventListener("click", function () {
+      dateCells.forEach((c) => c.classList.remove("date-selected"));
+      this.classList.add("date-selected");
+    });
+  });
+  timeSlots.forEach((slot) => {
+    slot.addEventListener("click", function () {
+      if (!this.classList.contains("time-disabled")) {
+        timeSlots.forEach((s) => s.classList.remove("time-selected"));
+        this.classList.add("time-selected");
+      }
+    });
+  });
+  // Month navigation
+  const prevMonthBtn = document.getElementById("prevMonth");
+  const nextMonthBtn = document.getElementById("nextMonth");
+  const currentMonthEl = document.getElementById("currentMonth");
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let currentDate = new Date(2025, 4); // May 2025
+  function updateCalendarHeader() {
+    currentMonthEl.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+  }
+  prevMonthBtn.addEventListener("click", function () {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    updateCalendarHeader();
+  });
+  nextMonthBtn.addEventListener("click", function () {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    updateCalendarHeader();
+  });
+});
+</script>
+<script id="auth-interactions">
+document.addEventListener("DOMContentLoaded", function () {
+  // Tab switching
+  const tabButtons = document.querySelectorAll("[data-tab]");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const tab = this.dataset.tab;
+
+      // Update button styles
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("border-b-2", "border-primary", "text-primary");
+        btn.classList.add("text-gray-500");
+      });
+      this.classList.add("border-b-2", "border-primary", "text-primary");
+      this.classList.remove("text-gray-500");
+
+      // Show/hide forms
+      if (tab === "login") {
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      } else {
+        loginForm.classList.add("hidden");
+        registerForm.classList.remove("hidden");
+      }
+    });
+  });
+  // Password visibility toggle
+  const passwordToggles = document.querySelectorAll("[data-password-toggle]");
+  passwordToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      const input = this.parentElement.querySelector("input");
+      const icon = this.querySelector("i");
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("ri-eye-line");
+        icon.classList.add("ri-eye-off-line");
+      } else {
+        input.type = "password";
+        icon.classList.remove("ri-eye-off-line");
+        icon.classList.add("ri-eye-line");
+      }
+    });
+  });
+  // Form submissions
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    // Add your login logic here
+    console.log("Login:", { email, password });
+  });
+  registerForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+      // Show error message
+      return;
+    }
+    // Add your registration logic here
+    console.log("Register:", { firstName, lastName, email, password });
+  });
+});
+</script>
+</body>
+</html>

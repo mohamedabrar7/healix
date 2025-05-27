@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare - Products</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      input:focus {
+          outline: none;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      .price-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #4F46E5;
+          cursor: pointer;
+      }
+      .price-slider::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #4F46E5;
+          cursor: pointer;
+      }
+      .custom-checkbox {
+          display: none;
+      }
+      .custom-checkbox + label {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          display: inline-block;
+      }
+      .custom-checkbox + label:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 18px;
+          height: 18px;
+          border: 1px solid #d1d5db;
+          background: #fff;
+          border-radius: 4px;
+      }
+      .custom-checkbox:checked + label:before {
+          background: #4F46E5;
+          border-color: #4F46E5;
+      }
+      .custom-checkbox:checked + label:after {
+          content: '';
+          position: absolute;
+          left: 6px;
+          top: 3px;
+          width: 6px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+      .custom-select {
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 0.5rem center;
+          background-size: 1.5em 1.5em;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">Healix</a>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="healixproduct.html"
+            class="text-primary font-medium hover:text-primary transition-colors"
+            >Products</a
+          >
+          <a href="healixaboutus.html" class="text-gray-600 hover:text-primary transition-colors"
+            >About Us</a
+          >
+          <a href="healixcontact.html" class="text-gray-600 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors"
+          >
+            <i class="ri-search-line text-gray-600"></i>
+          </div>
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors relative"
+          >
+            <i class="ri-shopping-cart-line text-gray-600"></i>
+          </div>
+          <button onclick="location.href='healixlogin.html';"
+            class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+          >
+            Login / Register
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+      <div class="container mx-auto px-4 py-3">
+        <nav class="flex">
+          <a href="#" class="text-gray-500 hover:text-primary">Home</a>
+          <span class="mx-2 text-gray-400">/</span>
+          <span class="text-primary font-medium">Products</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Search and Filter Section -->
+      <div class="mb-8">
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+          <div class="flex-1 relative">
+            <input
+              type="text"
+              placeholder="Search for medications..."
+              class="w-full pl-12 pr-4 py-3 rounded-lg border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/30"
+            />
+            <div
+              class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400"
+            >
+              <i class="ri-search-line"></i>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="relative w-48">
+              <select
+                class="w-full pl-4 pr-10 py-3 rounded-lg border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
+              >
+                <option value="">All Categories</option>
+                <option value="pain-relief">Pain Relief</option>
+                <option value="cold-flu">Cold & Flu</option>
+                <option value="vitamins">Vitamins</option>
+                <option value="prescriptions">Prescriptions</option>
+              </select>
+            </div>
+            <button
+              id="filter-toggle"
+              class="flex items-center gap-2 px-4 py-3 bg-white rounded-lg shadow-sm hover:bg-gray-50 !rounded-button whitespace-nowrap"
+            >
+              <i class="ri-filter-3-line"></i>
+              <span>Filters</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Panel -->
+        <div id="filter-panel" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Price Range -->
+            <div>
+              <h3 class="font-medium text-gray-900 mb-4">Price Range</h3>
+              <div class="mb-4">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="w-full price-slider"
+                  id="price-range"
+                />
+              </div>
+              <div class="flex justify-between text-sm text-gray-600">
+                <span>₹0</span>
+                <span id="price-value">₹50</span>
+                <span>₹100</span>
+              </div>
+            </div>
+
+            <!-- Brands -->
+            <div>
+              <h3 class="font-medium text-gray-900 mb-4">Brands</h3>
+              <div class="space-y-3 max-h-48 overflow-y-auto pr-2">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="brand1"
+                    class="custom-checkbox"
+                    checked
+                  />
+                  <label for="brand1" class="text-gray-700"
+                    >Johnson & Johnson</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" id="brand2" class="custom-checkbox" />
+                  <label for="brand2" class="text-gray-700">Pfizer</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="brand3" class="custom-checkbox" />
+                  <label for="brand3" class="text-gray-700">Bayer</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="brand4" class="custom-checkbox" />
+                  <label for="brand4" class="text-gray-700">Novartis</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="brand5" class="custom-checkbox" />
+                  <label for="brand5" class="text-gray-700"
+                    >GlaxoSmithKline</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" id="brand6" class="custom-checkbox" />
+                  <label for="brand6" class="text-gray-700">Roche</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Condition -->
+            <div>
+              <h3 class="font-medium text-gray-900 mb-4">Condition</h3>
+              <div class="relative mb-4">
+                <select
+                  class="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-200 bg-white focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
+                >
+                  <option value="">All Conditions</option>
+                  <option value="allergies">Allergies</option>
+                  <option value="cold-flu">Cold & Flu</option>
+                  <option value="pain">Pain</option>
+                  <option value="digestive">Digestive Health</option>
+                  <option value="heart">Heart Health</option>
+                  <option value="sleep">Sleep & Energy</option>
+                </select>
+              </div>
+
+              <div class="flex justify-between">
+                <button class="text-gray-500 hover:text-gray-700">
+                  Reset Filters
+                </button>
+                <button
+                  class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+                >
+                  Apply Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="mb-8 overflow-x-auto">
+        <div class="flex space-x-2 min-w-max pb-2">
+          <button
+            class="bg-primary text-white px-5 py-3 rounded-full flex items-center gap-2 whitespace-nowrap"
+          >
+            <i class="ri-apps-line"></i>
+            <span>All Products</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-medicine-bottle-line"></i>
+            <span>Pain Relief</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-thermometer-line"></i>
+            <span>Cold & Flu</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-capsule-line"></i>
+            <span>Vitamins</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-heart-pulse-line"></i>
+            <span>Heart Health</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-mental-health-line"></i>
+            <span>Mental Health</span>
+          </button>
+          <button
+            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
+          >
+            <i class="ri-zzz-line"></i>
+            <span>Sleep Aid</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Header -->
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">All Products</h1>
+          <p class="text-gray-600">Showing 1-24 of 128 products</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-gray-600 whitespace-nowrap">Sort by:</span>
+          <div class="relative w-48">
+            <select
+              class="w-full pl-4 pr-10 py-2 rounded-lg border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
+            >
+              <option value="popularity">Popularity</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8"
+      >
+        <!-- Product 1 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520pain%2520relief%2520tablets%2520in%2520their%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520box%2520of%2520ibuprofen%2520or%2520similar%2520pain%2520medication%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520medical%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product1&orientation=landscape"
+              alt="Advil Extra Strength"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Johnson & Johnson</span>
+              <h3 class="font-semibold text-gray-900">Advil Extra Strength</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(128)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹12.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520vitamin%2520supplements%2520in%2520a%2520bottle.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520multivitamins%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product2&orientation=landscape"
+              alt="Daily Multivitamin Plus"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Nature's Best</span>
+              <h3 class="font-semibold text-gray-900">
+                Daily Multivitamin Plus
+              </h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(94)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹19.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520allergy%2520medication%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520box%2520of%2520antihistamine%2520tablets%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520medical%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product3&orientation=landscape"
+              alt="Claritin 24-Hour"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Bayer</span>
+              <h3 class="font-semibold text-gray-900">Claritin 24-Hour</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+              </div>
+              <span class="text-xs text-gray-500">(76)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹15.49</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520cold%2520and%2520flu%2520medication%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520box%2520of%2520cold%2520medicine%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520medical%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product4&orientation=landscape"
+              alt="NyQuil Cold & Flu"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Procter & Gamble</span>
+              <h3 class="font-semibold text-gray-900">NyQuil Cold & Flu</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(112)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹14.29</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520omega-3%2520fish%2520oil%2520supplements%2520in%2520a%2520bottle.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520fish%2520oil%2520capsules%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product5&orientation=landscape"
+              alt="Omega-3 Fish Oil"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Nature Made</span>
+              <h3 class="font-semibold text-gray-900">Omega-3 Fish Oil</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+              </div>
+              <span class="text-xs text-gray-500">(89)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹22.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520melatonin%2520sleep%2520aid%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520melatonin%2520tablets%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product6&orientation=landscape"
+              alt="Melatonin Sleep Aid"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Natrol</span>
+              <h3 class="font-semibold text-gray-900">Melatonin Sleep Aid</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(156)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹9.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520probiotics%2520supplement%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520probiotic%2520capsules%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product7&orientation=landscape"
+              alt="Probiotics Supplement"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Culturelle</span>
+              <h3 class="font-semibold text-gray-900">Probiotics Supplement</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(78)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹24.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520calcium%2520supplements%2520in%2520a%2520bottle.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520calcium%2520tablets%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product8&orientation=landscape"
+              alt="Calcium + Vitamin D3"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Caltrate</span>
+              <h3 class="font-semibold text-gray-900">Calcium + Vitamin D3</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+              </div>
+              <span class="text-xs text-gray-500">(64)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹18.49</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- More products (9-16) -->
+        <!-- Product 9 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520acetaminophen%2520pain%2520relief%2520medication%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520box%2520of%2520Tylenol%2520or%2520similar%2520pain%2520medication%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520medical%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product9&orientation=landscape"
+              alt="Tylenol Extra Strength"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Johnson & Johnson</span>
+              <h3 class="font-semibold text-gray-900">
+                Tylenol Extra Strength
+              </h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(142)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹11.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 10 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520vitamin%2520C%2520supplements%2520in%2520a%2520bottle.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520vitamin%2520C%2520tablets%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product10&orientation=landscape"
+              alt="Vitamin C 1000mg"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Nature's Bounty</span>
+              <h3 class="font-semibold text-gray-900">Vitamin C 1000mg</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(98)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹16.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520nasal%2520spray%2520decongestant%2520in%2520its%2520packaging.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520nasal%2520spray%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520medical%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product11&orientation=landscape"
+              alt="Nasal Decongestant Spray"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">Afrin</span>
+              <h3 class="font-semibold text-gray-900">
+                Nasal Decongestant Spray
+              </h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+              </div>
+              <span class="text-xs text-gray-500">(71)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹13.79</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+        >
+          <div class="h-48 bg-gray-100 relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=A%2520professional%2520pharmaceutical%2520product%2520image%2520of%2520magnesium%2520supplements%2520in%2520a%2520bottle.%2520The%2520image%2520shows%2520a%2520clean%252C%2520well-lit%2520bottle%2520of%2520magnesium%2520tablets%2520against%2520a%2520simple%2520white%2520background.%2520The%2520packaging%2520is%2520clearly%2520visible%2520with%2520professional%2520health%2520and%2520wellness%2520branding.%2520The%2520image%2520has%2520a%2520clinical%252C%2520trustworthy%2520appearance%2520suitable%2520for%2520a%2520pharmacy%2520website.&width=400&height=300&seq=product12&orientation=landscape"
+              alt="Magnesium Citrate"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <button
+                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
+              >
+                Quick View
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="mb-2">
+              <span class="text-xs text-gray-500">NOW Foods</span>
+              <h3 class="font-semibold text-gray-900">Magnesium Citrate</h3>
+            </div>
+            <div class="flex items-center mb-3">
+              <div class="flex text-yellow-400 mr-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <span class="text-xs text-gray-500">(83)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-medium">₹14.99</span>
+              <button
+                class="bg-primary text-white px-3 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-sm"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <span class="text-gray-600">Showing 1-12 of 128 products</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="mr-4">
+            <select
+              class="bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-700 custom-select"
+            >
+              <option value="24">24 per page</option>
+              <option value="48">48 per page</option>
+              <option value="96">96 per page</option>
+            </select>
+          </div>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-500 disabled:opacity-50"
+          >
+            <i class="ri-arrow-left-s-line"></i>
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white"
+          >
+            1
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-700"
+          >
+            2
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-700"
+          >
+            3
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-700"
+          >
+            4
+          </button>
+          <span class="w-10 h-10 flex items-center justify-center text-gray-500"
+            >...</span
+          >
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-700"
+          >
+            11
+          </button>
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-500"
+          >
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block"
+              >Healix</a
+            >
+            <p class="text-gray-400 mb-6">
+              Your trusted online pharmacy providing quality healthcare products
+              and services since 2010.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixaboutus.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixcontact.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Customer Service</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Return Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line mr-3 mt-1"></i>
+                <span class="text-gray-400"
+                  >123 Pharmacy Street, Chennai-620 028, Tamil Nadu, India</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3"></i>
+                <span class="text-gray-400">+91 9876543210</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <span class="text-gray-400">support@medicarestore.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-time-line mr-3"></i>
+                <span class="text-gray-400">Mon-Sat: 8:00 AM - 10:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+          <div class="flex justify-center space-x-6 mb-6">
+            <i class="ri-visa-line text-2xl"></i>
+            <i class="ri-mastercard-line text-2xl"></i>
+            <i class="ri-paypal-line text-2xl"></i>
+            <i class="ri-apple-fill text-2xl"></i>
+            <i class="ri-amazon-pay-line text-2xl"></i>
+          </div>
+          <p>&copy; 2025 MediCare Online Pharmacy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script id="filter-toggle-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterToggle = document.getElementById("filter-toggle");
+        const filterPanel = document.getElementById("filter-panel");
+
+        filterToggle.addEventListener("click", function () {
+          if (filterPanel.classList.contains("hidden")) {
+            filterPanel.classList.remove("hidden");
+          } else {
+            filterPanel.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+
+    <script id="price-range-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const priceRange = document.getElementById("price-range");
+        const priceValue = document.getElementById("price-value");
+
+        priceRange.addEventListener("input", function () {
+          priceValue.textContent = "₹" + this.value;
+        });
+      });
+    </script>
+  </body>
+</html>

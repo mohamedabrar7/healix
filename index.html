@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare - Your Trusted Online Pharmacy</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .hero-section {
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%), url('https://readdy.ai/api/search-image?query=A%20modern%20pharmacy%20with%20clean%2C%20well-lit%20shelves%20displaying%20various%20medicines%20and%20healthcare%20products.%20The%20image%20shows%20a%20professional%20healthcare%20environment%20with%20a%20pharmacist%20in%20a%20white%20coat%20helping%20a%20customer.%20The%20right%20side%20of%20the%20image%20has%20more%20detail%20while%20the%20left%20side%20is%20simpler%20and%20lighter%20to%20allow%20text%20overlay.%20The%20overall%20atmosphere%20is%20bright%2C%20clinical%2C%20and%20trustworthy.&width=1200&height=600&seq=pharmacy123&orientation=landscape');
+          background-size: cover;
+          background-position: center;
+      }
+      input:focus {
+          outline: none;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">Healix</a>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index.html"
+            class="text-gray-900 font-medium hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a href="healixproduct.html" class="text-gray-600 hover:text-primary transition-colors"
+            >Products</a
+          >
+          <a href="healixaboutus.html" class="text-gray-600 hover:text-primary transition-colors"
+            >About Us</a
+          >
+          <a href="healixcontact.html" class="text-gray-600 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors"
+          >
+            <i class="ri-search-line text-gray-600"></i>
+          </div>
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors relative"
+          >
+            <i class="ri-shopping-cart-line text-gray-600"></i>
+          </div>
+          <button onclick="location.href='healixlogin.html';"
+            class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+          >
+            Login / Register
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-[600px] flex items-center">
+      <div class="container mx-auto px-4 w-full">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Your Trusted Online Pharmacy
+          </h1>
+          <p class="text-xl text-gray-700 mb-8">
+            Find the best medicines delivered to your doorstep with guaranteed
+            quality and safety.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+          <button onclick="location.href='healixproduct.html';"
+              class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-lg font-medium"
+            >
+              Find Medicines
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-3">
+            Browse by Categories
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our wide range of pharmaceutical products organized by
+            categories to find exactly what you need.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-medicine-bottle-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Pain Relief</h3>
+            <p class="text-gray-600 text-sm">
+              Effective solutions for headaches, muscle pain, and joint
+              discomfort
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-thermometer-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Cold & Flu</h3>
+            <p class="text-gray-600 text-sm">
+              Remedies to help you recover from seasonal illnesses faster
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-capsule-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">
+              Vitamins & Supplements
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Boost your immunity and maintain overall health
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-file-list-3-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">
+              Prescription Medicines
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Upload your prescription and get medicines delivered
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-12">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3">
+              Featured Products
+            </h2>
+            <p class="text-gray-600">
+              Our most popular and trusted pharmaceutical products
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button
+              id="prev-product"
+              class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            >
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button
+              id="next-product"
+              class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            >
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="h-48 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%20professional%20pharmaceutical%20product%20image%20of%20pain%20relief%20tablets%20in%20their%20packaging.%20The%20image%20shows%20a%20clean%2C%20well-lit%20box%20of%20ibuprofen%20or%20similar%20pain%20medication%20against%20a%20simple%20white%20background.%20The%20packaging%20is%20clearly%20visible%20with%20professional%20medical%20branding.%20The%20image%20has%20a%20clinical%2C%20trustworthy%20appearance%20suitable%20for%20a%20pharmacy%20website.&width=400&height=300&seq=product1&orientation=landscape"
+                alt="Pain Relief Tablets"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-semibold text-gray-900">
+                  Advil Extra Strength
+                </h3>
+                <span class="text-primary font-medium">₹12.99</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
+                Fast-acting pain relief for headaches, muscle pain, and minor
+                arthritis.
+              </p>
+          <button onclick="location.href='healixlogin.html';"
+                class="w-full bg-primary text-white py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="h-48 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%20professional%20pharmaceutical%20product%20image%20of%20vitamin%20supplements%20in%20a%20bottle.%20The%20image%20shows%20a%20clean%2C%20well-lit%20bottle%20of%20multivitamins%20against%20a%20simple%20white%20background.%20The%20packaging%20is%20clearly%20visible%20with%20professional%20health%20and%20wellness%20branding.%20The%20image%20has%20a%20clinical%2C%20trustworthy%20appearance%20suitable%20for%20a%20pharmacy%20website.&width=400&height=300&seq=product2&orientation=landscape"
+                alt="Multivitamin Supplements"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-semibold text-gray-900">
+                  Daily Multivitamin Plus
+                </h3>
+                <span class="text-primary font-medium">₹19.99</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
+                Complete daily nutrition with essential vitamins and minerals
+                for adults.
+              </p>
+          <button onclick="location.href='healixlogin.html';"
+                class="w-full bg-primary text-white py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="h-48 bg-gray-100">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%20professional%20pharmaceutical%20product%20image%20of%20allergy%20medication%20in%20its%20packaging.%20The%20image%20shows%20a%20clean%2C%20well-lit%20box%20of%20antihistamine%20tablets%20against%20a%20simple%20white%20background.%20The%20packaging%20is%20clearly%20visible%20with%20professional%20medical%20branding.%20The%20image%20has%20a%20clinical%2C%20trustworthy%20appearance%20suitable%20for%20a%20pharmacy%20website.&width=400&height=300&seq=product3&orientation=landscape"
+                alt="Allergy Relief Medication"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-5">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-semibold text-gray-900">Claritin 24-Hour</h3>
+                <span class="text-primary font-medium">₹15.49</span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
+                Non-drowsy allergy relief that provides 24-hour symptom control.
+              </p>
+          <button onclick="location.href='healixlogin.html';"
+                class="w-full bg-primary text-white py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-3">Why Choose Us</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We're committed to providing you with the highest quality
+            pharmaceutical products and exceptional service.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-shield-check-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">
+              Certified Medicines
+            </h3>
+            <p class="text-gray-600">
+              All our products are sourced from certified manufacturers and
+              undergo strict quality checks.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-truck-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Fast Delivery</h3>
+            <p class="text-gray-600">
+              Get your medicines delivered to your doorstep within 24-48 hours
+              of placing your order.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">24/7 Support</h3>
+            <p class="text-gray-600">
+              Our customer service team and licensed pharmacists are available
+              round the clock.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-price-tag-3-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Competitive Prices</h3>
+            <p class="text-gray-600">
+              We offer the best prices on all products with regular discounts
+              and special offers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-3">
+            What Our Customers Say
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hear from our satisfied customers about their experience with our
+            services.
+          </p>
+        </div>
+
+        <div class="relative" id="testimonial-container">
+          <div class="flex overflow-hidden" id="testimonial-slider">
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20middle-aged%20woman%20with%20short%20brown%20hair%20and%20a%20friendly%20smile%2C%20wearing%20business%20casual%20attire.%20The%20image%20has%20a%20clean%2C%20simple%20background%20and%20is%20well-lit%2C%20showing%20her%20face%20clearly.%20The%20portrait%20has%20a%20natural%2C%20approachable%20feel%20suitable%20for%20a%20customer%20testimonial.&width=100&height=100&seq=person1&orientation=squarish"
+                      alt="Emily Robertson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900">Emily Robertson</h4>
+                    <p class="text-gray-500 text-sm">New York, USA</p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-600 italic">
+                  "I've been using this online pharmacy for over a year now, and
+                  I'm extremely satisfied with their service. The medicines are
+                  always delivered on time, and their customer support is
+                  exceptional. Highly recommended!"
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20middle-aged%20man%20with%20glasses%20and%20short%20dark%20hair%2C%20wearing%20a%20casual%20button-up%20shirt.%20The%20image%20has%20a%20clean%2C%20simple%20background%20and%20is%20well-lit%2C%20showing%20his%20face%20clearly.%20The%20portrait%20has%20a%20natural%2C%20approachable%20feel%20suitable%20for%20a%20customer%20testimonial.&width=100&height=100&seq=person2&orientation=squarish"
+                      alt="Michael Thompson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900">Michael Thompson</h4>
+                    <p class="text-gray-500 text-sm">Chicago, USA</p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-half-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-600 italic">
+                  "What I appreciate most is the ease of uploading prescriptions
+                  and getting my medications delivered. The prices are
+                  competitive, and they often have good discounts. Their
+                  pharmacists are knowledgeable and always available for
+                  consultation."
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4"
+                  >
+                    <img
+                      src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20senior%20woman%20with%20silver%20hair%20and%20a%20warm%20smile%2C%20wearing%20a%20casual%20blouse.%20The%20image%20has%20a%20clean%2C%20simple%20background%20and%20is%20well-lit%2C%20showing%20her%20face%20clearly.%20The%20portrait%20has%20a%20natural%2C%20approachable%20feel%20suitable%20for%20a%20customer%20testimonial.&width=100&height=100&seq=person3&orientation=squarish"
+                      alt="Sarah Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900">Sarah Johnson</h4>
+                    <p class="text-gray-500 text-sm">Boston, USA</p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <blockquote class="text-gray-600 italic">
+                  "As someone who requires regular medication, finding this
+                  online pharmacy has been a blessing. Their subscription
+                  service ensures I never run out of my medicines, and their
+                  reminders are very helpful. The quality of products is always
+                  top-notch."
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center mt-8 space-x-2" id="testimonial-dots">
+            <button
+              class="w-3 h-3 rounded-full bg-primary"
+              data-index="0"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-gray-300"
+              data-index="1"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-gray-300"
+              data-index="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-primary/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-3">Stay Updated</h2>
+          <p class="text-gray-600 mb-8">
+            Subscribe to our newsletter for the latest product updates, health
+            tips, and exclusive offers.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="flex-1 px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary/30 bg-white"
+            />
+            <button
+              class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
+            >
+              Subscribe Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block"
+              >Helix</a
+            >
+            <p class="text-gray-400 mb-6">
+              Your trusted online pharmacy providing quality healthcare products
+              and services since 2010.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixproduct.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixaboutus.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="healixcontact.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Customer Service</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Return Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line mr-3 mt-1"></i>
+                <span class="text-gray-400"
+                  >123 Pharmacy Street, Chennai-620 028, Tamil Nadu, India</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3"></i>
+                <span class="text-gray-400">+91 9876543210</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <span class="text-gray-400">support@medicarestore.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-time-line mr-3"></i>
+                <span class="text-gray-400">Mon-Sat: 8:00 AM - 10:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+          <div class="flex justify-center space-x-6 mb-6">
+            <i class="ri-visa-line text-2xl"></i>
+            <i class="ri-mastercard-line text-2xl"></i>
+            <i class="ri-paypal-line text-2xl"></i>
+            <i class="ri-apple-fill text-2xl"></i>
+            <i class="ri-amazon-pay-line text-2xl"></i>
+          </div>
+          <p>&copy; 2025 MediCare Online Pharmacy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script id="testimonial-slider-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("testimonial-slider");
+        const dots = document
+          .getElementById("testimonial-dots")
+          .querySelectorAll("button");
+        let currentIndex = 0;
+
+        function goToSlide(index) {
+          slider.style.transform = `translateX(-₹{index * 100}%)`;
+
+          // Update dots
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.remove("bg-gray-300");
+              dot.classList.add("bg-primary");
+            } else {
+              dot.classList.remove("bg-primary");
+              dot.classList.add("bg-gray-300");
+            }
+          });
+
+          currentIndex = index;
+        }
+
+        // Set up dot click handlers
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            goToSlide(index);
+          });
+        });
+
+        // Auto slide
+        let interval = setInterval(() => {
+          let nextIndex = (currentIndex + 1) % dots.length;
+          goToSlide(nextIndex);
+        }, 5000);
+
+        // Pause on hover
+        const testimonialContainer = document.getElementById("testimonial-container");
+        testimonialContainer.addEventListener("mouseenter", () => {
+          clearInterval(interval);
+        });
+
+        testimonialContainer.addEventListener("mouseleave", () => {
+          interval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % dots.length;
+            goToSlide(nextIndex);
+          }, 5000);
+        });
+      });
+    </script>
+
+    <script id="product-slider-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const prevBtn = document.getElementById("prev-product");
+        const nextBtn = document.getElementById("next-product");
+
+        prevBtn.addEventListener("click", function () {
+          // This would be implemented for a real product slider
+          // For this demo, we're just showing the button UI
+          console.log("Previous product");
+        });
+
+        nextBtn.addEventListener("click", function () {
+          // This would be implemented for a real product slider
+          // For this demo, we're just showing the button UI
+          console.log("Next product");
+        });
+      });
+    </script>
+  </body>
+</html>
