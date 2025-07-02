@@ -26,6 +26,7 @@
         },
       };
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -139,11 +140,7 @@
         </nav>
 
         <div class="flex items-center space-x-4">
-          <div
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors"
-          >
-            <i class="ri-search-line text-gray-600"></i>
-          </div>
+          
           <div
             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 transition-colors relative"
           >
@@ -187,17 +184,7 @@
             </div>
           </div>
           <div class="flex gap-3">
-            <div class="relative w-48">
-              <select
-                class="w-full pl-4 pr-10 py-3 rounded-lg border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
-              >
-                <option value="">All Categories</option>
-                <option value="pain-relief">Pain Relief</option>
-                <option value="cold-flu">Cold & Flu</option>
-                <option value="vitamins">Vitamins</option>
-                <option value="prescriptions">Prescriptions</option>
-              </select>
-            </div>
+        
             <button
               id="filter-toggle"
               class="flex items-center gap-2 px-4 py-3 bg-white rounded-lg shadow-sm hover:bg-gray-50 !rounded-button whitespace-nowrap"
@@ -240,7 +227,7 @@
                     type="checkbox"
                     id="brand1"
                     class="custom-checkbox"
-                    checked
+                    
                   />
                   <label for="brand1" class="text-gray-700"
                     >Johnson & Johnson</label
@@ -248,7 +235,7 @@
                 </div>
                 <div>
                   <input type="checkbox" id="brand2" class="custom-checkbox" />
-                  <label for="brand2" class="text-gray-700">Pfizer</label>
+                  <label for="brand2" class="text-gray-700">Nature's Best</label>
                 </div>
                 <div>
                   <input type="checkbox" id="brand3" class="custom-checkbox" />
@@ -256,100 +243,27 @@
                 </div>
                 <div>
                   <input type="checkbox" id="brand4" class="custom-checkbox" />
-                  <label for="brand4" class="text-gray-700">Novartis</label>
+                  <label for="brand4" class="text-gray-700">Procter & Gamble</label>
                 </div>
                 <div>
                   <input type="checkbox" id="brand5" class="custom-checkbox" />
                   <label for="brand5" class="text-gray-700"
-                    >GlaxoSmithKline</label
+                    >Afrin</label
                   >
                 </div>
                 <div>
                   <input type="checkbox" id="brand6" class="custom-checkbox" />
-                  <label for="brand6" class="text-gray-700">Roche</label>
+                  <label for="brand6" class="text-gray-700">Caltrate</label>
                 </div>
               </div>
             </div>
-
-            <!-- Condition -->
-            <div>
-              <h3 class="font-medium text-gray-900 mb-4">Condition</h3>
-              <div class="relative mb-4">
-                <select
-                  class="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-200 bg-white focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
-                >
-                  <option value="">All Conditions</option>
-                  <option value="allergies">Allergies</option>
-                  <option value="cold-flu">Cold & Flu</option>
-                  <option value="pain">Pain</option>
-                  <option value="digestive">Digestive Health</option>
-                  <option value="heart">Heart Health</option>
-                  <option value="sleep">Sleep & Energy</option>
-                </select>
-              </div>
-
-              <div class="flex justify-between">
-                <button class="text-gray-500 hover:text-gray-700">
-                  Reset Filters
-                </button>
-                <button
-                  class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors"
-                >
-                  Apply Filters
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Category Tabs -->
-      <div class="mb-8 overflow-x-auto">
-        <div class="flex space-x-2 min-w-max pb-2">
-          <button
-            class="bg-primary text-white px-5 py-3 rounded-full flex items-center gap-2 whitespace-nowrap"
-          >
-            <i class="ri-apps-line"></i>
-            <span>All Products</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-medicine-bottle-line"></i>
-            <span>Pain Relief</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-thermometer-line"></i>
-            <span>Cold & Flu</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-capsule-line"></i>
-            <span>Vitamins</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-heart-pulse-line"></i>
-            <span>Heart Health</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-mental-health-line"></i>
-            <span>Mental Health</span>
-          </button>
-          <button
-            class="bg-white text-gray-700 px-5 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 whitespace-nowrap"
-          >
-            <i class="ri-zzz-line"></i>
-            <span>Sleep Aid</span>
-          </button>
-        </div>
-      </div>
+
 
       <!-- Products Header -->
       <div class="flex justify-between items-center mb-6">
@@ -357,20 +271,7 @@
           <h1 class="text-2xl font-bold text-gray-900">All Products</h1>
           <p class="text-gray-600">Showing 1-24 of 128 products</p>
         </div>
-        <div class="flex items-center gap-3">
-          <span class="text-gray-600 whitespace-nowrap">Sort by:</span>
-          <div class="relative w-48">
-            <select
-              class="w-full pl-4 pr-10 py-2 rounded-lg border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/30 text-gray-700 custom-select"
-            >
-              <option value="popularity">Popularity</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="newest">Newest</option>
-              <option value="rating">Rating</option>
-            </select>
-          </div>
-        </div>
+        
       </div>
 
       <!-- Products Grid -->
@@ -389,12 +290,9 @@
             />
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+		onclick="myFunction()"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -436,11 +334,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -484,11 +378,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+             
             </div>
           </div>
           <div class="p-5">
@@ -530,11 +420,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+             
             </div>
           </div>
           <div class="p-5">
@@ -576,11 +462,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -622,11 +504,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -668,11 +546,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -714,11 +588,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -761,11 +631,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -809,11 +675,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -855,11 +717,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+              
             </div>
           </div>
           <div class="p-5">
@@ -903,11 +761,7 @@
             <div
               class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <button
-                class="bg-white text-gray-800 px-4 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors mx-2"
-              >
-                Quick View
-              </button>
+
             </div>
           </div>
           <div class="p-5">
@@ -943,15 +797,7 @@
           <span class="text-gray-600">Showing 1-12 of 128 products</span>
         </div>
         <div class="flex items-center gap-2">
-          <div class="mr-4">
-            <select
-              class="bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-700 custom-select"
-            >
-              <option value="24">24 per page</option>
-              <option value="48">48 per page</option>
-              <option value="96">96 per page</option>
-            </select>
-          </div>
+         
           <button
             class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-gray-500 disabled:opacity-50"
           >
@@ -1152,6 +998,46 @@
         </div>
       </div>
     </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector('input[placeholder="Search for medications..."]');
+  const brandCheckboxes = document.querySelectorAll('.custom-checkbox');
+  const priceRange = document.getElementById("price-range");
+
+  const products = document.querySelectorAll(".group");
+
+  function filterProducts() {
+    const searchValue = searchInput.value.toLowerCase();
+    const selectedBrands = Array.from(brandCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.nextElementSibling.textContent.trim().toLowerCase());
+
+    const maxPrice = parseFloat(priceRange.value);
+
+    products.forEach(product => {
+      const name = product.querySelector("h3").textContent.toLowerCase();
+      const brand = product.querySelector("span.text-xs").textContent.toLowerCase();
+      const priceText = product.querySelector("span.text-primary").textContent.replace(/[₹,]/g, '');
+      const price = parseFloat(priceText);
+
+      const matchesSearch = name.includes(searchValue);
+      const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brand);
+      const matchesPrice = price <= maxPrice;
+
+      if (matchesSearch && matchesBrand && matchesPrice) {
+        product.style.display = "";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+
+  searchInput.addEventListener("input", filterProducts);
+  brandCheckboxes.forEach(cb => cb.addEventListener("change", filterProducts));
+  priceRange.addEventListener("input", filterProducts);
+});
+</script>
+
 
     <script id="filter-toggle-script">
       document.addEventListener("DOMContentLoaded", function () {
@@ -1178,5 +1064,6 @@
         });
       });
     </script>
+
   </body>
 </html>
